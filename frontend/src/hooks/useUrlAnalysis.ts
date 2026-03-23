@@ -44,7 +44,7 @@ export function useUrlAnalysis() {
     setCurrentResult(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/detect", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/detect`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
