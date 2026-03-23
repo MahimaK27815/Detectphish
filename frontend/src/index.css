@@ -1,0 +1,212 @@
+/* ✅ MUST BE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+/* ✅ THEN Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .dark {
+    --background: 222 25% 5%;
+    --foreground: 210 40% 92%;
+
+    --card: 222 20% 9%;
+    --card-foreground: 210 40% 92%;
+
+    --popover: 222 20% 9%;
+    --popover-foreground: 210 40% 92%;
+
+    --primary: 160 100% 45%;
+    --primary-foreground: 222 25% 5%;
+
+    --secondary: 210 100% 55%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 15% 14%;
+    --muted-foreground: 215 20% 50%;
+
+    --accent: 160 80% 38%;
+    --accent-foreground: 222 25% 5%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 25% 5%;
+
+    --safe: 160 100% 45%;
+    --safe-foreground: 222 25% 5%;
+
+    --suspicious: 38 92% 50%;
+    --suspicious-foreground: 222 25% 5%;
+
+    --danger: 0 85% 55%;
+    --danger-foreground: 210 40% 98%;
+
+    --border: 222 15% 16%;
+    --input: 222 15% 16%;
+    --ring: 160 100% 45%;
+
+    --radius: 0.75rem;
+
+    --neon-glow: 0 0 15px hsl(160 100% 45% / 0.25), 0 0 45px hsl(160 100% 45% / 0.08);
+    --neon-glow-blue: 0 0 15px hsl(210 100% 55% / 0.25), 0 0 45px hsl(210 100% 55% / 0.08);
+    --neon-glow-red: 0 0 15px hsl(0 85% 55% / 0.25), 0 0 45px hsl(0 85% 55% / 0.08);
+    --neon-glow-yellow: 0 0 15px hsl(38 92% 50% / 0.25), 0 0 45px hsl(38 92% 50% / 0.08);
+
+    --sidebar-background: 222 20% 7%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-primary: 160 100% 45%;
+    --sidebar-primary-foreground: 222 25% 5%;
+    --sidebar-accent: 222 15% 14%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 222 15% 16%;
+    --sidebar-ring: 160 100% 45%;
+  }
+
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 222 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 25% 10%;
+
+    --primary: 160 100% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 160 80% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 45%;
+    --warning-foreground: 222 25% 10%;
+
+    --safe: 160 100% 32%;
+    --safe-foreground: 0 0% 100%;
+
+    --suspicious: 38 92% 45%;
+    --suspicious-foreground: 222 25% 10%;
+
+    --danger: 0 85% 50%;
+    --danger-foreground: 0 0% 100%;
+
+    --border: 210 15% 85%;
+    --input: 210 15% 85%;
+    --ring: 160 100% 32%;
+
+    --radius: 0.75rem;
+
+    --neon-glow: 0 0 10px hsl(160 100% 32% / 0.15), 0 0 30px hsl(160 100% 32% / 0.05);
+    --neon-glow-blue: 0 0 10px hsl(210 100% 45% / 0.15), 0 0 30px hsl(210 100% 45% / 0.05);
+    --neon-glow-red: 0 0 10px hsl(0 85% 50% / 0.15), 0 0 30px hsl(0 85% 50% / 0.05);
+    --neon-glow-yellow: 0 0 10px hsl(38 92% 45% / 0.15), 0 0 30px hsl(38 92% 45% / 0.05);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 25% 10%;
+    --sidebar-primary: 160 100% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 92%;
+    --sidebar-accent-foreground: 222 25% 10%;
+    --sidebar-border: 210 15% 85%;
+    --sidebar-ring: 160 100% 32%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .neon-border {
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: var(--neon-glow);
+  }
+  .neon-border-blue {
+    border: 1px solid hsl(var(--secondary) / 0.3);
+    box-shadow: var(--neon-glow-blue);
+  }
+  .neon-border-red {
+    border: 1px solid hsl(var(--danger) / 0.3);
+    box-shadow: var(--neon-glow-red);
+  }
+  .neon-border-yellow {
+    border: 1px solid hsl(var(--suspicious) / 0.3);
+    box-shadow: var(--neon-glow-yellow);
+  }
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.2);
+  }
+  .neon-text-blue {
+    text-shadow: 0 0 10px hsl(var(--secondary) / 0.5), 0 0 30px hsl(var(--secondary) / 0.2);
+  }
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+  .gradient-bg {
+    background: 
+      radial-gradient(ellipse at 20% 0%, hsl(var(--primary) / 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, hsl(var(--secondary) / 0.03) 0%, transparent 50%),
+      hsl(var(--background));
+  }
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.025) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+  }
+
+  @keyframes pulse-neon {
+    0%, 100% { box-shadow: var(--neon-glow); }
+    50% { box-shadow: 0 0 25px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--primary) / 0.15); }
+  }
+  .pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite;
+  }
+
+  @keyframes terminal-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .terminal-cursor {
+    animation: terminal-blink 1s step-end infinite;
+  }
+
+  @keyframes scan-sweep {
+    0% { transform: translateY(-100%); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(400%); opacity: 0; }
+  }
+  .scan-sweep {
+    animation: scan-sweep 2s ease-in-out infinite;
+  }
+
+  .risk-badge-safe {
+    @apply bg-safe/15 text-safe border border-safe/30 text-xs font-mono font-semibold px-2 py-0.5 rounded-full;
+  }
+  .risk-badge-suspicious {
+    @apply bg-suspicious/15 text-suspicious border border-suspicious/30 text-xs font-mono font-semibold px-2 py-0.5 rounded-full;
+  }
+  .risk-badge-dangerous {
+    @apply bg-danger/15 text-danger border border-danger/30 text-xs font-mono font-semibold px-2 py-0.5 rounded-full;
+  }
+}
